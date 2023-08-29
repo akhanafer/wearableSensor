@@ -1,0 +1,693 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDB2A3102A9E014F0077EF0A /* Wearable Sensor Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FDB2A30F2A9E014F0077EF0A /* Wearable Sensor Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FDB2A3152A9E014F0077EF0A /* Wearable_SensorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3142A9E014F0077EF0A /* Wearable_SensorApp.swift */; };
+		FDB2A3172A9E014F0077EF0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3162A9E014F0077EF0A /* ContentView.swift */; };
+		FDB2A3192A9E01510077EF0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB2A3182A9E01510077EF0A /* Assets.xcassets */; };
+		FDB2A31C2A9E01510077EF0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB2A31B2A9E01510077EF0A /* Preview Assets.xcassets */; };
+		FDB2A3262A9E01510077EF0A /* Wearable_Sensor_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3252A9E01510077EF0A /* Wearable_Sensor_Watch_AppTests.swift */; };
+		FDB2A3302A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A32F2A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITests.swift */; };
+		FDB2A3322A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3312A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDB2A3112A9E014F0077EF0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDB2A3032A9E014E0077EF0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDB2A30E2A9E014F0077EF0A;
+			remoteInfo = "Wearable Sensor Watch App";
+		};
+		FDB2A3222A9E01510077EF0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDB2A3032A9E014E0077EF0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDB2A30E2A9E014F0077EF0A;
+			remoteInfo = "Wearable Sensor Watch App";
+		};
+		FDB2A32C2A9E01510077EF0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDB2A3032A9E014E0077EF0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDB2A30E2A9E014F0077EF0A;
+			remoteInfo = "Wearable Sensor Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FDB2A3382A9E01510077EF0A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FDB2A3102A9E014F0077EF0A /* Wearable Sensor Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FDB2A3092A9E014F0077EF0A /* Wearable Sensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wearable Sensor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB2A30F2A9E014F0077EF0A /* Wearable Sensor Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wearable Sensor Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB2A3142A9E014F0077EF0A /* Wearable_SensorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wearable_SensorApp.swift; sourceTree = "<group>"; };
+		FDB2A3162A9E014F0077EF0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FDB2A3182A9E01510077EF0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDB2A31B2A9E01510077EF0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FDB2A3212A9E01510077EF0A /* Wearable Sensor Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wearable Sensor Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB2A3252A9E01510077EF0A /* Wearable_Sensor_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wearable_Sensor_Watch_AppTests.swift; sourceTree = "<group>"; };
+		FDB2A32B2A9E01510077EF0A /* Wearable Sensor Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wearable Sensor Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB2A32F2A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wearable_Sensor_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		FDB2A3312A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wearable_Sensor_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDB2A30C2A9E014F0077EF0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB2A31E2A9E01510077EF0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB2A3282A9E01510077EF0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDB2A3022A9E014E0077EF0A = {
+			isa = PBXGroup;
+			children = (
+				FDB2A3132A9E014F0077EF0A /* Wearable Sensor Watch App */,
+				FDB2A3242A9E01510077EF0A /* Wearable Sensor Watch AppTests */,
+				FDB2A32E2A9E01510077EF0A /* Wearable Sensor Watch AppUITests */,
+				FDB2A30A2A9E014F0077EF0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDB2A30A2A9E014F0077EF0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDB2A3092A9E014F0077EF0A /* Wearable Sensor.app */,
+				FDB2A30F2A9E014F0077EF0A /* Wearable Sensor Watch App.app */,
+				FDB2A3212A9E01510077EF0A /* Wearable Sensor Watch AppTests.xctest */,
+				FDB2A32B2A9E01510077EF0A /* Wearable Sensor Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDB2A3132A9E014F0077EF0A /* Wearable Sensor Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				FDB2A3142A9E014F0077EF0A /* Wearable_SensorApp.swift */,
+				FDB2A3162A9E014F0077EF0A /* ContentView.swift */,
+				FDB2A3182A9E01510077EF0A /* Assets.xcassets */,
+				FDB2A31A2A9E01510077EF0A /* Preview Content */,
+			);
+			path = "Wearable Sensor Watch App";
+			sourceTree = "<group>";
+		};
+		FDB2A31A2A9E01510077EF0A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FDB2A31B2A9E01510077EF0A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FDB2A3242A9E01510077EF0A /* Wearable Sensor Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDB2A3252A9E01510077EF0A /* Wearable_Sensor_Watch_AppTests.swift */,
+			);
+			path = "Wearable Sensor Watch AppTests";
+			sourceTree = "<group>";
+		};
+		FDB2A32E2A9E01510077EF0A /* Wearable Sensor Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FDB2A32F2A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITests.swift */,
+				FDB2A3312A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "Wearable Sensor Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDB2A3082A9E014F0077EF0A /* Wearable Sensor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDB2A3392A9E01510077EF0A /* Build configuration list for PBXNativeTarget "Wearable Sensor" */;
+			buildPhases = (
+				FDB2A3072A9E014F0077EF0A /* Resources */,
+				FDB2A3382A9E01510077EF0A /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDB2A3122A9E014F0077EF0A /* PBXTargetDependency */,
+			);
+			name = "Wearable Sensor";
+			productName = "Wearable Sensor";
+			productReference = FDB2A3092A9E014F0077EF0A /* Wearable Sensor.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		FDB2A30E2A9E014F0077EF0A /* Wearable Sensor Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDB2A3352A9E01510077EF0A /* Build configuration list for PBXNativeTarget "Wearable Sensor Watch App" */;
+			buildPhases = (
+				FDB2A30B2A9E014F0077EF0A /* Sources */,
+				FDB2A30C2A9E014F0077EF0A /* Frameworks */,
+				FDB2A30D2A9E014F0077EF0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wearable Sensor Watch App";
+			productName = "Wearable Sensor Watch App";
+			productReference = FDB2A30F2A9E014F0077EF0A /* Wearable Sensor Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDB2A3202A9E01510077EF0A /* Wearable Sensor Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDB2A33C2A9E01510077EF0A /* Build configuration list for PBXNativeTarget "Wearable Sensor Watch AppTests" */;
+			buildPhases = (
+				FDB2A31D2A9E01510077EF0A /* Sources */,
+				FDB2A31E2A9E01510077EF0A /* Frameworks */,
+				FDB2A31F2A9E01510077EF0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDB2A3232A9E01510077EF0A /* PBXTargetDependency */,
+			);
+			name = "Wearable Sensor Watch AppTests";
+			productName = "Wearable Sensor Watch AppTests";
+			productReference = FDB2A3212A9E01510077EF0A /* Wearable Sensor Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FDB2A32A2A9E01510077EF0A /* Wearable Sensor Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDB2A33F2A9E01510077EF0A /* Build configuration list for PBXNativeTarget "Wearable Sensor Watch AppUITests" */;
+			buildPhases = (
+				FDB2A3272A9E01510077EF0A /* Sources */,
+				FDB2A3282A9E01510077EF0A /* Frameworks */,
+				FDB2A3292A9E01510077EF0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDB2A32D2A9E01510077EF0A /* PBXTargetDependency */,
+			);
+			name = "Wearable Sensor Watch AppUITests";
+			productName = "Wearable Sensor Watch AppUITests";
+			productReference = FDB2A32B2A9E01510077EF0A /* Wearable Sensor Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDB2A3032A9E014E0077EF0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					FDB2A3082A9E014F0077EF0A = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					FDB2A30E2A9E014F0077EF0A = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					FDB2A3202A9E01510077EF0A = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = FDB2A30E2A9E014F0077EF0A;
+					};
+					FDB2A32A2A9E01510077EF0A = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = FDB2A30E2A9E014F0077EF0A;
+					};
+				};
+			};
+			buildConfigurationList = FDB2A3062A9E014E0077EF0A /* Build configuration list for PBXProject "Wearable Sensor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDB2A3022A9E014E0077EF0A;
+			productRefGroup = FDB2A30A2A9E014F0077EF0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDB2A3082A9E014F0077EF0A /* Wearable Sensor */,
+				FDB2A30E2A9E014F0077EF0A /* Wearable Sensor Watch App */,
+				FDB2A3202A9E01510077EF0A /* Wearable Sensor Watch AppTests */,
+				FDB2A32A2A9E01510077EF0A /* Wearable Sensor Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDB2A3072A9E014F0077EF0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB2A30D2A9E014F0077EF0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDB2A31C2A9E01510077EF0A /* Preview Assets.xcassets in Resources */,
+				FDB2A3192A9E01510077EF0A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB2A31F2A9E01510077EF0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB2A3292A9E01510077EF0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDB2A30B2A9E014F0077EF0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDB2A3172A9E014F0077EF0A /* ContentView.swift in Sources */,
+				FDB2A3152A9E014F0077EF0A /* Wearable_SensorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB2A31D2A9E01510077EF0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDB2A3262A9E01510077EF0A /* Wearable_Sensor_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB2A3272A9E01510077EF0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDB2A3302A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITests.swift in Sources */,
+				FDB2A3322A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDB2A3122A9E014F0077EF0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDB2A30E2A9E014F0077EF0A /* Wearable Sensor Watch App */;
+			targetProxy = FDB2A3112A9E014F0077EF0A /* PBXContainerItemProxy */;
+		};
+		FDB2A3232A9E01510077EF0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDB2A30E2A9E014F0077EF0A /* Wearable Sensor Watch App */;
+			targetProxy = FDB2A3222A9E01510077EF0A /* PBXContainerItemProxy */;
+		};
+		FDB2A32D2A9E01510077EF0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDB2A30E2A9E014F0077EF0A /* Wearable Sensor Watch App */;
+			targetProxy = FDB2A32C2A9E01510077EF0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FDB2A3332A9E01510077EF0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDB2A3342A9E01510077EF0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		FDB2A3362A9E01510077EF0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wearable Sensor Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = W54JS78T4T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Wearable Sensor";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikhanafer.Wearable-Sensor.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		FDB2A3372A9E01510077EF0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wearable Sensor Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = W54JS78T4T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Wearable Sensor";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikhanafer.Wearable-Sensor.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+		FDB2A33A2A9E01510077EF0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W54JS78T4T;
+				INFOPLIST_KEY_CFBundleDisplayName = "Wearable Sensor";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikhanafer.Wearable-Sensor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FDB2A33B2A9E01510077EF0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W54JS78T4T;
+				INFOPLIST_KEY_CFBundleDisplayName = "Wearable Sensor";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikhanafer.Wearable-Sensor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDB2A33D2A9E01510077EF0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W54JS78T4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikhanafer.Wearable-Sensor-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wearable Sensor Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wearable Sensor Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		FDB2A33E2A9E01510077EF0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W54JS78T4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikhanafer.Wearable-Sensor-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wearable Sensor Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wearable Sensor Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+		FDB2A3402A9E01510077EF0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W54JS78T4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikhanafer.Wearable-Sensor-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Wearable Sensor Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		FDB2A3412A9E01510077EF0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W54JS78T4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikhanafer.Wearable-Sensor-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Wearable Sensor Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDB2A3062A9E014E0077EF0A /* Build configuration list for PBXProject "Wearable Sensor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDB2A3332A9E01510077EF0A /* Debug */,
+				FDB2A3342A9E01510077EF0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDB2A3352A9E01510077EF0A /* Build configuration list for PBXNativeTarget "Wearable Sensor Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDB2A3362A9E01510077EF0A /* Debug */,
+				FDB2A3372A9E01510077EF0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDB2A3392A9E01510077EF0A /* Build configuration list for PBXNativeTarget "Wearable Sensor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDB2A33A2A9E01510077EF0A /* Debug */,
+				FDB2A33B2A9E01510077EF0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDB2A33C2A9E01510077EF0A /* Build configuration list for PBXNativeTarget "Wearable Sensor Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDB2A33D2A9E01510077EF0A /* Debug */,
+				FDB2A33E2A9E01510077EF0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDB2A33F2A9E01510077EF0A /* Build configuration list for PBXNativeTarget "Wearable Sensor Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDB2A3402A9E01510077EF0A /* Debug */,
+				FDB2A3412A9E01510077EF0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDB2A3032A9E014E0077EF0A /* Project object */;
+}
