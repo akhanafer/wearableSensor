@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Wearable_Sensor_Watch_AppApp: App {
+    @State var workoutManager = WorkoutManager()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
+            .environmentObject(workoutManager)
         }
+        
     }
 }
