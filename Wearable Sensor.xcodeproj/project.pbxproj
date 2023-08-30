@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD2D6DB32A9EBC90003D2AAC /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2D6DB22A9EBC90003D2AAC /* ElapsedTimeView.swift */; };
+		FD2D6DB52A9EC344003D2AAC /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2D6DB42A9EC344003D2AAC /* ControlsView.swift */; };
+		FD3D32AA2A9F4EB3001DB7D5 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D32A92A9F4EB3001DB7D5 /* SummaryView.swift */; };
+		FD3D32AC2A9F55DD001DB7D5 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D32AB2A9F55DD001DB7D5 /* WorkoutManager.swift */; };
 		FDB2A3102A9E014F0077EF0A /* Wearable Sensor Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FDB2A30F2A9E014F0077EF0A /* Wearable Sensor Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FDB2A3152A9E014F0077EF0A /* Wearable_SensorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3142A9E014F0077EF0A /* Wearable_SensorApp.swift */; };
-		FDB2A3172A9E014F0077EF0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3162A9E014F0077EF0A /* ContentView.swift */; };
+		FDB2A3172A9E014F0077EF0A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3162A9E014F0077EF0A /* StartView.swift */; };
 		FDB2A3192A9E01510077EF0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB2A3182A9E01510077EF0A /* Assets.xcassets */; };
 		FDB2A31C2A9E01510077EF0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB2A31B2A9E01510077EF0A /* Preview Assets.xcassets */; };
 		FDB2A3262A9E01510077EF0A /* Wearable_Sensor_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3252A9E01510077EF0A /* Wearable_Sensor_Watch_AppTests.swift */; };
 		FDB2A3302A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A32F2A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITests.swift */; };
 		FDB2A3322A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3312A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITestsLaunchTests.swift */; };
+		FDB2A3432A9E06810077EF0A /* SessionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3422A9E06810077EF0A /* SessionPagingView.swift */; };
+		FDB2A3452A9E07A10077EF0A /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3442A9E07A10077EF0A /* MetricsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +62,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD2D6DB22A9EBC90003D2AAC /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
+		FD2D6DB42A9EC344003D2AAC /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		FD3D32A92A9F4EB3001DB7D5 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		FD3D32AB2A9F55DD001DB7D5 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		FDB2A3092A9E014F0077EF0A /* Wearable Sensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wearable Sensor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2A30F2A9E014F0077EF0A /* Wearable Sensor Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wearable Sensor Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2A3142A9E014F0077EF0A /* Wearable_SensorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wearable_SensorApp.swift; sourceTree = "<group>"; };
-		FDB2A3162A9E014F0077EF0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FDB2A3162A9E014F0077EF0A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		FDB2A3182A9E01510077EF0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDB2A31B2A9E01510077EF0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FDB2A3212A9E01510077EF0A /* Wearable Sensor Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wearable Sensor Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +77,8 @@
 		FDB2A32B2A9E01510077EF0A /* Wearable Sensor Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wearable Sensor Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2A32F2A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wearable_Sensor_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		FDB2A3312A9E01510077EF0A /* Wearable_Sensor_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wearable_Sensor_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FDB2A3422A9E06810077EF0A /* SessionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPagingView.swift; sourceTree = "<group>"; };
+		FDB2A3442A9E07A10077EF0A /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +131,13 @@
 			isa = PBXGroup;
 			children = (
 				FDB2A3142A9E014F0077EF0A /* Wearable_SensorApp.swift */,
-				FDB2A3162A9E014F0077EF0A /* ContentView.swift */,
+				FDB2A3162A9E014F0077EF0A /* StartView.swift */,
+				FD3D32A92A9F4EB3001DB7D5 /* SummaryView.swift */,
+				FD3D32AB2A9F55DD001DB7D5 /* WorkoutManager.swift */,
+				FDB2A3422A9E06810077EF0A /* SessionPagingView.swift */,
+				FDB2A3442A9E07A10077EF0A /* MetricsView.swift */,
+				FD2D6DB42A9EC344003D2AAC /* ControlsView.swift */,
+				FD2D6DB22A9EBC90003D2AAC /* ElapsedTimeView.swift */,
 				FDB2A3182A9E01510077EF0A /* Assets.xcassets */,
 				FDB2A31A2A9E01510077EF0A /* Preview Content */,
 			);
@@ -309,8 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDB2A3172A9E014F0077EF0A /* ContentView.swift in Sources */,
+				FDB2A3172A9E014F0077EF0A /* StartView.swift in Sources */,
+				FD3D32AA2A9F4EB3001DB7D5 /* SummaryView.swift in Sources */,
 				FDB2A3152A9E014F0077EF0A /* Wearable_SensorApp.swift in Sources */,
+				FD2D6DB32A9EBC90003D2AAC /* ElapsedTimeView.swift in Sources */,
+				FDB2A3452A9E07A10077EF0A /* MetricsView.swift in Sources */,
+				FD3D32AC2A9F55DD001DB7D5 /* WorkoutManager.swift in Sources */,
+				FD2D6DB52A9EC344003D2AAC /* ControlsView.swift in Sources */,
+				FDB2A3432A9E06810077EF0A /* SessionPagingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
