@@ -9,10 +9,15 @@ import SwiftUI
 
 @main
 struct Wearable_Sensor_Watch_AppApp: App {
-    @State var workoutManager = WorkoutManager()
+    @StateObject var workoutManager = WorkoutManager()
     var body: some Scene {
         WindowGroup {
-            StartView()
+            NavigationView{
+                StartView()
+            }
+            .sheet(isPresented: $workoutManager.showingSummaryView){
+                SummaryView()
+            }
             .environmentObject(workoutManager)
         }
         

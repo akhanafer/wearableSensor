@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SummaryView: View {
+    @Environment(\.dismiss) var dismiss
     @State private var durationFormatter:
     DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -46,6 +47,7 @@ struct SummaryView: View {
                 ).accentColor(.red)
                 
                 Button("Done"){
+                    dismiss()
                 }
             }
             .scenePadding()
