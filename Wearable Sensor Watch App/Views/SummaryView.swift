@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SummaryView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var workoutManager: WorkoutManager
     @State private var durationFormatter:
     DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -18,42 +19,47 @@ struct SummaryView: View {
     }()
     
     var body: some View {
-        ScrollView(.vertical){
-            VStack(alignment: .leading){
-                SummaryMetricView(title: "Total Time", value: durationFormatter.string(from:  30 * 60 + 15) ?? ""
-                ).accentColor(.yellow)
-                
-                SummaryMetricView(title: "Total Distance", value: Measurement(value: 1625, unit: UnitLength.meters).formatted(.measurement(width: .abbreviated, usage: .road))).accentColor(.green)
-                
-                SummaryMetricView(
-                    title: "Total Energy",
-                    value: Measurement(
-                        value: 96,
-                        unit: UnitEnergy.kilocalories
-                    ).formatted(
-                        .measurement(
-                            width: .abbreviated,
-                            usage: .workout
+        if workoutManager.workout == nil {
+            ProgressView("Saving Workout")
+                .navigationBarHidden(true)
+        } else { ScrollView(.vertical){
+                VStack(alignment: .leading){
+                    SummaryMetricView(title: "Total Time", value: durationFormatter.string(from:  workoutManager.workout?.duration ?? 0.0) ?? ""
+                    ).accentColor(.yellow)
+                    
+                    SummaryMetricView(title: "Total Distance", value: Measurement(value: workoutManager.workout?.totalDistance?.doubleValue(for: .meter()) ?? 0, unit: UnitLength.meters).formatted(.measurement(width: .abbreviated, usage: .road))).accentColor(.green)
+                    
+                    SummaryMetricView(
+                        title: "Total Energy",
+                        value: Measurement(
+                            value: workoutManager.workout?.totalEnergyBurned?.doubleValue(for: .kilocalorie()) ?? 0,
+                            unit: UnitEnergy.kilocalories
+                        ).formatted(
+                            .measurement(
+                                width: .abbreviated,
+                                usage: .workout
+                            )
                         )
-                    )
-                ).accentColor(.pink)
+                    ).accentColor(.pink)
 
-                SummaryMetricView(
-                    title: "Avg. Heart Rate",
-                    value: 143
-                        .formatted(
-                            .number.precision(.fractionLength(0))
-                    ) + "bpm"
-                ).accentColor(.red)
-                
-                Button("Done"){
-                    dismiss()
+                    SummaryMetricView(
+                        title: "Avg. Heart Rate",
+                        value: workoutManager.averageHeartRate
+                            .formatted(
+                                .number.precision(.fractionLength(0))
+                        ) + "bpm"
+                    ).accentColor(.red)
+                    
+                    Button("Done"){
+                        dismiss()
+                    }
                 }
+                .scenePadding()
             }
-            .scenePadding()
+            .navigationTitle("Summary")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("Summary")
-        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 
