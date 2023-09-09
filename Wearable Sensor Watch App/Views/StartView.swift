@@ -9,7 +9,27 @@ import SwiftUI
 import HealthKit
 struct StartView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
-    var workoutTypes: [HKWorkoutActivityType] = [.cycling, .running, .walking]
+    var workoutTypes: [Workout.Activity] = [
+        .chopping,
+        .grating,
+        .pouring,
+        .wiping,
+        .running,
+        .cycling,
+        .pushups,
+        .squats,
+        .jumpingJacks,
+        .brushing,
+        .washingHands,
+        .shaving,
+        .flushing,
+        .eating,
+        .drinking,
+        .knocking,
+        .laughing,
+        .coughing,
+        .clapping
+    ]
     
     var body: some View {
         List(workoutTypes) { workoutType in
@@ -33,24 +53,5 @@ struct StartView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         StartView()
-    }
-}
-
-extension HKWorkoutActivityType: Identifiable {
-    public var id: UInt {
-        rawValue
-    }
-    
-    var name: String {
-        switch self {
-        case .running:
-            return "Run"
-        case .cycling:
-            return "Bike"
-        case .walking:
-            return "Walk"
-        default:
-            return ""
-        }
     }
 }

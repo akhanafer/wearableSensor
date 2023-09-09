@@ -7,12 +7,20 @@
 
 import Foundation
 import HealthKit
+import CoreLocation
+import CoreMotion
+import RealmSwift
 
 class WorkoutManager: NSObject, ObservableObject {
-    var selectedWorkout: HKWorkoutActivityType? {
+    let motionManager = CMMotionManager()
+    let locationManager = CLLocationManager()
+    var workoutModel: Workout?
+    var userModel: User?
+    
+    var selectedWorkout: Workout.Activity? {
         didSet {
             guard let selectedWorkout = selectedWorkout else { return }
-            startWorkout(workoutType: selectedWorkout)
+            startWorkout()
         }
     }
     
@@ -29,9 +37,37 @@ class WorkoutManager: NSObject, ObservableObject {
     var session: HKWorkoutSession?
     var builder: HKLiveWorkoutBuilder?
     
-    func startWorkout(workoutType: HKWorkoutActivityType){
+    var motionTimer: Timer?
+    
+    func startWorkout(){
+        var workoutAndUser: (Workout, User) = createWorkoutAndUser()
+        workoutModel = workoutAndUser.0
+        userModel = workoutAndUser.1
+        startHeartDataCollection()
+        startIMUDataCollection()
+    }
+    
+    func createWorkoutAndUser() -> (workout: Workout, user: User){
+        let user: User = User(
+            name: "Ali Khanafer",
+            email: "ali.h.khanafer@gmail.com"
+        )
+        let workoutStartTime: Date = Date()
+        
+        var workout: Workout = Workout(
+            user: user,
+            metadata: Metadata(activity: selectedWorkout!),
+            startDateTime: workoutStartTime,
+            endDateTime: nil,
+            data: List<Data>()
+        )
+        
+        return (workout, user)
+    }
+    
+    func startHeartDataCollection() {
         let configuration = HKWorkoutConfiguration()
-        configuration.activityType = workoutType
+        configuration.activityType = .other
         configuration.locationType = .outdoor
         
         do{
@@ -52,6 +88,12 @@ class WorkoutManager: NSObject, ObservableObject {
             // The workout has started
             
         }
+    }
+
+    func startIMUDataCollection(updateInterval: Double = 0.5) {
+        self.motionManager.accelerometerUpdateInterval = updateInterval
+        self.motionManager.startAccelerometerUpdates()
+        
     }
     
     func requestAuthorization(){
@@ -99,7 +141,10 @@ class WorkoutManager: NSObject, ObservableObject {
     
     func endWorkout() {
         session?.end()
+        motionManager.stopAccelerometerUpdates()
         showingSummaryView = true
+        workoutModel?.endDateTime = Date()
+        saveWorkout(workout: workoutModel!)
     }
     
     // Mark: - Workout Metrics
@@ -108,6 +153,9 @@ class WorkoutManager: NSObject, ObservableObject {
     @Published var activeEnergy: Double = 0
     @Published var distance: Double = 0
     @Published var workout: HKWorkout?
+    var x: Double?
+    var y: Double?
+    var z: Double?
     
     func updateForStatistics(_ statistics: HKStatistics?) {
         guard let statistics = statistics else { return }
@@ -127,6 +175,22 @@ class WorkoutManager: NSObject, ObservableObject {
             default:
                 return
             }
+            
+            if let data = self.motionManager.accelerometerData {
+                self.x = data.acceleration.x
+                self.y = data.acceleration.y
+                self.z = data.acceleration.z
+            }
+            
+            self.workoutModel?.data.append(
+                Data(
+                    timestamp: Date(),
+                    heartRate: self.heartRate,
+                    accelerometerX: self.x ?? 0,
+                    accelerometerY: self.y ?? 0,
+                    accelerometerZ: self.z ?? 0
+                )
+            )
         }
     }
     
@@ -139,6 +203,9 @@ class WorkoutManager: NSObject, ObservableObject {
         averageHeartRate = 0
         heartRate = 0
         distance = 0
+        x = nil
+        y = nil
+        z = nil
     }
 }
 

@@ -19,6 +19,10 @@
 		FDB2A3192A9E01510077EF0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB2A3182A9E01510077EF0A /* Assets.xcassets */; };
 		FDB2A3432A9E06810077EF0A /* SessionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3422A9E06810077EF0A /* SessionPagingView.swift */; };
 		FDB2A3452A9E07A10077EF0A /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2A3442A9E07A10077EF0A /* MetricsView.swift */; };
+		FDB439402AAA74A600A935C4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FDB4393F2AAA74A600A935C4 /* Realm */; };
+		FDB439422AAA74A600A935C4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FDB439412AAA74A600A935C4 /* RealmSwift */; };
+		FDB439442AAA74EE00A935C4 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB439432AAA74EE00A935C4 /* Workout.swift */; };
+		FDB439462AAA753600A935C4 /* DatabaseOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB439452AAA753600A935C4 /* DatabaseOps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +71,7 @@
 		FD7B10A02AA395F8008EC379 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 		FD7B10A22AA39619008EC379 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD7B10A42AA3B9AE008EC379 /* Wearable Sensor Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wearable Sensor Watch App.entitlements"; sourceTree = "<group>"; };
-		FD7B10A52AA3B9D3008EC379 /* Wearable-Sensor-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Wearable-Sensor-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FD7B10A52AA3B9D3008EC379 /* Wearable-Sensor-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wearable-Sensor-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FDB2A3092A9E014F0077EF0A /* Wearable Sensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wearable Sensor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2A30F2A9E014F0077EF0A /* Wearable Sensor Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wearable Sensor Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2A3142A9E014F0077EF0A /* Wearable_SensorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wearable_SensorApp.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		FDB2A32B2A9E01510077EF0A /* Wearable Sensor Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wearable Sensor Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2A3422A9E06810077EF0A /* SessionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPagingView.swift; sourceTree = "<group>"; };
 		FDB2A3442A9E07A10077EF0A /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
+		FDB439432AAA74EE00A935C4 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		FDB439452AAA753600A935C4 /* DatabaseOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseOps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB439422AAA74A600A935C4 /* RealmSwift in Frameworks */,
+				FDB439402AAA74A600A935C4 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +128,7 @@
 		FDB2A3022A9E014E0077EF0A = {
 			isa = PBXGroup;
 			children = (
+				FD7B10A52AA3B9D3008EC379 /* Wearable-Sensor-Watch-App-Info.plist */,
 				FDB2A3132A9E014F0077EF0A /* Wearable Sensor Watch App */,
 				FDB2A30A2A9E014F0077EF0A /* Products */,
 			);
@@ -139,16 +148,25 @@
 		FDB2A3132A9E014F0077EF0A /* Wearable Sensor Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				FD7B10A52AA3B9D3008EC379 /* Wearable-Sensor-Watch-App-Info.plist */,
-				FD7B10A42AA3B9AE008EC379 /* Wearable Sensor Watch App.entitlements */,
-				FD7B10A22AA39619008EC379 /* Preview Assets.xcassets */,
-				FD7B10A02AA395F8008EC379 /* Preview Content */,
 				FDB2A3142A9E014F0077EF0A /* Wearable_SensorApp.swift */,
 				FD3D32AB2A9F55DD001DB7D5 /* WorkoutManager.swift */,
+				FDB4393D2AAA71FA00A935C4 /* Model */,
 				FD7B109F2AA39089008EC379 /* Views */,
+				FD7B10A02AA395F8008EC379 /* Preview Content */,
+				FD7B10A22AA39619008EC379 /* Preview Assets.xcassets */,
+				FD7B10A42AA3B9AE008EC379 /* Wearable Sensor Watch App.entitlements */,
 				FDB2A3182A9E01510077EF0A /* Assets.xcassets */,
 			);
 			path = "Wearable Sensor Watch App";
+			sourceTree = "<group>";
+		};
+		FDB4393D2AAA71FA00A935C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDB439432AAA74EE00A935C4 /* Workout.swift */,
+				FDB439452AAA753600A935C4 /* DatabaseOps.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +202,10 @@
 			dependencies = (
 			);
 			name = "Wearable Sensor Watch App";
+			packageProductDependencies = (
+				FDB4393F2AAA74A600A935C4 /* Realm */,
+				FDB439412AAA74A600A935C4 /* RealmSwift */,
+			);
 			productName = "Wearable Sensor Watch App";
 			productReference = FDB2A30F2A9E014F0077EF0A /* Wearable Sensor Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +281,9 @@
 				Base,
 			);
 			mainGroup = FDB2A3022A9E014E0077EF0A;
+			packageReferences = (
+				FDB4393E2AAA74A600A935C4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = FDB2A30A2A9E014F0077EF0A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -313,8 +338,10 @@
 				FDB2A3172A9E014F0077EF0A /* StartView.swift in Sources */,
 				FD3D32AA2A9F4EB3001DB7D5 /* SummaryView.swift in Sources */,
 				FDB2A3152A9E014F0077EF0A /* Wearable_SensorApp.swift in Sources */,
+				FDB439462AAA753600A935C4 /* DatabaseOps.swift in Sources */,
 				FD2D6DB32A9EBC90003D2AAC /* ElapsedTimeView.swift in Sources */,
 				FDB2A3452A9E07A10077EF0A /* MetricsView.swift in Sources */,
+				FDB439442AAA74EE00A935C4 /* Workout.swift in Sources */,
 				FD3D32AC2A9F55DD001DB7D5 /* WorkoutManager.swift in Sources */,
 				FD2D6DB52A9EC344003D2AAC /* ControlsView.swift in Sources */,
 				FDB2A3432A9E06810077EF0A /* SessionPagingView.swift in Sources */,
@@ -696,6 +723,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FDB4393E2AAA74A600A935C4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.42.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FDB4393F2AAA74A600A935C4 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FDB4393E2AAA74A600A935C4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		FDB439412AAA74A600A935C4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FDB4393E2AAA74A600A935C4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FDB2A3032A9E014E0077EF0A /* Project object */;
 }
