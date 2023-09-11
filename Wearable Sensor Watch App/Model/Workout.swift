@@ -10,68 +10,17 @@ import HealthKit
 import CoreLocation
 import RealmSwift
 
-class User: Object, Identifiable {
-    @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var name: String
-    @Persisted var email: String
-
-    convenience init(name: String, email: String) {
-        self.init()
-        self.name = name
-        self.email = email
-    }
-}
-
-class Metadata: Object {
-    @Persisted var activity: Workout.Activity
-    @Persisted var category: Workout.Category
-    
-    convenience init(activity: Workout.Activity) {
-        self.init()
-        self.activity = activity
-        self.category = {
-            switch activity {
-            case .chopping, .grating, .pouring, .wiping:
-                return .kitchen
-            case .running, .cycling, .pushups, .squats, .jumpingJacks:
-                return .workout
-            case .brushing, .washingHands, .shaving, .flushing:
-                return .bathroom
-            case .eating, .drinking, .knocking, .laughing, .coughing, .clapping:
-                return .miscellaneous
-            }
-        }()
-    }
-}
-
-class Data: Object {
-    @Persisted var timestamp: Date
-    @Persisted var heartRate: Double
-    @Persisted var accelerometerX: Double
-    @Persisted var accelerometerY: Double
-    @Persisted var accelerometerZ: Double
-    
-    convenience init(timestamp: Date, heartRate: Double, accelerometerX: Double, accelerometerY: Double, accelerometerZ: Double) {
-        self.init()
-        self.timestamp = timestamp
-        self.heartRate = heartRate
-        self.accelerometerX = accelerometerX
-        self.accelerometerY = accelerometerY
-        self.accelerometerZ = accelerometerZ
-    }
-}
-
 class Workout: Object, Identifiable {
-    @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var user: User?
-    @Persisted var metadata: Metadata?
-    @Persisted var startDateTime: Date
+    @Persisted(primaryKey: true) var _id: String? = UUID().uuidString
+    @Persisted var userId: String?
+    @Persisted var metadata: Workout_metadata?
+    @Persisted var startDateTime: Date?
     @Persisted var endDateTime: Date?
-    @Persisted var data: List<Data>
+    @Persisted var data: List<Workout_data>
     
-    convenience init(user: User, metadata: Metadata, startDateTime: Date, endDateTime: Date? = nil, data: List<Data>) {
+    convenience init(userId: String, metadata: Workout_metadata, startDateTime: Date, endDateTime: Date? = nil, data: List<Workout_data>) {
         self.init()
-        self.user = user
+        self.userId = userId
         self.metadata = metadata
         self.startDateTime = startDateTime
         self.endDateTime = endDateTime
@@ -133,5 +82,53 @@ class Workout: Object, Identifiable {
                 return "Clap"
             }
         }
+    }
+}
+
+class Workout_metadata: EmbeddedObject {
+    @Persisted var activity: Workout.Activity?
+    @Persisted var category: Workout.Category?
+    @Persisted var indoor: Bool?
+    
+    convenience init(activity: Workout.Activity) {
+        self.init()
+        self.activity = activity
+        self.category = {
+            switch activity {
+            case .chopping, .grating, .pouring, .wiping:
+                return .kitchen
+            case .running, .cycling, .pushups, .squats, .jumpingJacks:
+                return .workout
+            case .brushing, .washingHands, .shaving, .flushing:
+                return .bathroom
+            case .eating, .drinking, .knocking, .laughing, .coughing, .clapping:
+                return .miscellaneous
+            }
+        }()
+        self.indoor = {
+            switch activity {
+            case .running, .cycling:
+                return false
+            default:
+                return true
+            }
+        }()
+    }
+}
+
+class Workout_data: EmbeddedObject {
+    @Persisted var timestamp: Date?
+    @Persisted var heartRate: Double?
+    @Persisted var accelerometerX: Double?
+    @Persisted var accelerometerY: Double?
+    @Persisted var accelerometerZ: Double?
+    
+    convenience init(timestamp: Date, heartRate: Double, accelerometerX: Double, accelerometerY: Double, accelerometerZ: Double) {
+        self.init()
+        self.timestamp = timestamp
+        self.heartRate = heartRate
+        self.accelerometerX = accelerometerX
+        self.accelerometerY = accelerometerY
+        self.accelerometerZ = accelerometerZ
     }
 }

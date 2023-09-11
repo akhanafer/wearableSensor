@@ -13,7 +13,9 @@ struct ControlsView: View {
         HStack{
             VStack{
                 Button{
-                    workoutManager.endWorkout()
+                    Task{
+                        await workoutManager.endWorkout()
+                    }
                 } label: {
                     Image(systemName: "xmark")
                 }

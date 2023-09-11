@@ -15,12 +15,14 @@ class WorkoutManager: NSObject, ObservableObject {
     let motionManager = CMMotionManager()
     let locationManager = CLLocationManager()
     var workoutModel: Workout?
-    var userModel: User?
-    
+    var user: RealmSwift.User?
+
     var selectedWorkout: Workout.Activity? {
         didSet {
             guard let selectedWorkout = selectedWorkout else { return }
-            startWorkout()
+            async {
+                await startWorkout()
+            }
         }
     }
     
@@ -39,36 +41,35 @@ class WorkoutManager: NSObject, ObservableObject {
     
     var motionTimer: Timer?
     
-    func startWorkout(){
-        var workoutAndUser: (Workout, User) = createWorkoutAndUser()
-        workoutModel = workoutAndUser.0
-        userModel = workoutAndUser.1
+    func startWorkout() async{
+        do {
+            user = try await login()
+        } catch {
+            print("Error logging in")
+        }
+        workoutModel = createWorkoutAndUser(user!)
         startHeartDataCollection()
         startIMUDataCollection()
     }
     
-    func createWorkoutAndUser() -> (workout: Workout, user: User){
-        let user: User = User(
-            name: "Ali Khanafer",
-            email: "ali.h.khanafer@gmail.com"
-        )
+    func createWorkoutAndUser(_ user: RealmSwift.User) -> Workout{
         let workoutStartTime: Date = Date()
         
-        var workout: Workout = Workout(
-            user: user,
-            metadata: Metadata(activity: selectedWorkout!),
+        let workout: Workout = Workout(
+            userId: user.id,
+            metadata: Workout_metadata(activity: selectedWorkout!),
             startDateTime: workoutStartTime,
             endDateTime: nil,
-            data: List<Data>()
+            data: List<Workout_data>()
         )
         
-        return (workout, user)
+        return workout
     }
     
     func startHeartDataCollection() {
         let configuration = HKWorkoutConfiguration()
         configuration.activityType = .other
-        configuration.locationType = .outdoor
+        configuration.locationType = (workoutModel?.metadata!.indoor)! ? .indoor : .outdoor
         
         do{
             session = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
@@ -139,12 +140,12 @@ class WorkoutManager: NSObject, ObservableObject {
         }
     }
     
-    func endWorkout() {
+    func endWorkout() async{
         session?.end()
         motionManager.stopAccelerometerUpdates()
         showingSummaryView = true
         workoutModel?.endDateTime = Date()
-        saveWorkout(workout: workoutModel!)
+        await openSyncedRealm(user: user!, workout: workoutModel!)
     }
     
     // Mark: - Workout Metrics
@@ -183,7 +184,7 @@ class WorkoutManager: NSObject, ObservableObject {
             }
             
             self.workoutModel?.data.append(
-                Data(
+                Workout_data(
                     timestamp: Date(),
                     heartRate: self.heartRate,
                     accelerometerX: self.x ?? 0,
