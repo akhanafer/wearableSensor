@@ -46,6 +46,7 @@ struct StartView: View {
         .navigationBarTitle("Workouts")
         .onAppear{
             workoutManager.requestAuthorization()
+            
         }
     }
 }

@@ -10,16 +10,6 @@ import RealmSwift
 
 let app = App(id: "devicesync-oibuc")
 
-//func saveWorkout(workout: Workout){
-//    do {
-//        try realm.write {
-//            realm.add(workout)
-//        }
-//    } catch let error as NSError {
-//        print("Error while writing workout: \(error)")
-//    }
-//}
-
 func login() async throws -> RealmSwift.User {
     // Authenticate with the instance of the app that points
     // to your backend. Here, we're using anonymous login.
@@ -30,6 +20,7 @@ func login() async throws -> RealmSwift.User {
 
 @MainActor
 func openSyncedRealm(user: RealmSwift.User, workout: Workout) async {
+    
     do {
         var config = user.flexibleSyncConfiguration(initialSubscriptions: { subs in
             subs.append(
@@ -41,7 +32,14 @@ func openSyncedRealm(user: RealmSwift.User, workout: Workout) async {
         // Pass object types to the Flexible Sync configuration
         // as a temporary workaround for not being able to add a
         // complete schema for a Flexible Sync app.
-        config.objectTypes = [Workout.self, Workout_metadata.self, Workout_data.self]
+        config.objectTypes = [
+            Workout.self,
+            Workout_metadata.self,
+            Workout_data.self,
+            Workout_data_heart.self,
+            Workout_data_accelerometer.self,
+            Workout_location.self
+        ]
         let realm = try await Realm(configuration: config,  downloadBeforeOpen: .always)
         useRealm(realm, user, workout)
     } catch {

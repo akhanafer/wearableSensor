@@ -16,15 +16,17 @@ class Workout: Object, Identifiable {
     @Persisted var metadata: Workout_metadata?
     @Persisted var startDateTime: Date?
     @Persisted var endDateTime: Date?
-    @Persisted var data: List<Workout_data>
+    @Persisted var data: Workout_data?
+    @Persisted var location: List<Workout_location>
     
-    convenience init(userId: String, metadata: Workout_metadata, startDateTime: Date, endDateTime: Date? = nil, data: List<Workout_data>) {
+    convenience init(userId: String, metadata: Workout_metadata, startDateTime: Date, endDateTime: Date? = nil, data: Workout_data, location: List<Workout_location>) {
         self.init()
         self.userId = userId
         self.metadata = metadata
         self.startDateTime = startDateTime
         self.endDateTime = endDateTime
         self.data = data
+        self.location = location
     }
     
     enum Category: String, PersistableEnum {
@@ -34,7 +36,7 @@ class Workout: Object, Identifiable {
         case miscellaneous
     }
     
-    enum Activity: Int, PersistableEnum, Identifiable {
+    enum Activity: String, PersistableEnum, Identifiable {
         case chopping, grating, pouring, wiping // kitchen
         case running, cycling, pushups, squats, jumpingJacks // workout
         case brushing, washingHands, shaving, flushing // bathroom
@@ -117,18 +119,50 @@ class Workout_metadata: EmbeddedObject {
 }
 
 class Workout_data: EmbeddedObject {
+    @Persisted var heart: List<Workout_data_heart>
+    @Persisted var accelerometer: List<Workout_data_accelerometer>
+    
+    convenience init(heart: List<Workout_data_heart>, accelerometer: List<Workout_data_accelerometer>) {
+        self.init()
+        self.heart = heart
+        self.accelerometer = accelerometer
+    }
+}
+
+class Workout_data_heart: EmbeddedObject {
     @Persisted var timestamp: Date?
     @Persisted var heartRate: Double?
+    convenience init(timestamp: Date, heartRate: Double) {
+        self.init()
+        self.timestamp = timestamp
+        self.heartRate = heartRate
+    }
+}
+
+class Workout_data_accelerometer: EmbeddedObject {
+    @Persisted var timestamp: Date?
     @Persisted var accelerometerX: Double?
     @Persisted var accelerometerY: Double?
     @Persisted var accelerometerZ: Double?
     
-    convenience init(timestamp: Date, heartRate: Double, accelerometerX: Double, accelerometerY: Double, accelerometerZ: Double) {
+    convenience init(timestamp: Date, accelerometerX: Double, accelerometerY: Double, accelerometerZ: Double) {
         self.init()
         self.timestamp = timestamp
-        self.heartRate = heartRate
         self.accelerometerX = accelerometerX
         self.accelerometerY = accelerometerY
         self.accelerometerZ = accelerometerZ
+    }
+}
+
+class Workout_location: EmbeddedObject {
+    @Persisted var timestamp: Date?
+    @Persisted var latitude: Double?
+    @Persisted var longitude: Double?
+    
+    convenience init(timestamp: Date, latitude: Double, longitude: Double) {
+        self.init()
+        self.timestamp = timestamp
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }

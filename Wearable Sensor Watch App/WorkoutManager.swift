@@ -16,12 +16,34 @@ class WorkoutManager: NSObject, ObservableObject {
     let locationManager = CLLocationManager()
     var workoutModel: Workout?
     var user: RealmSwift.User?
-
+    var motionTimer: Timer?
+    
     var selectedWorkout: Workout.Activity? {
         didSet {
             guard let selectedWorkout = selectedWorkout else { return }
             async {
                 await startWorkout()
+            }
+            motionTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true){_ in
+                if let data = self.motionManager.accelerometerData {
+                    self.workoutModel?.data?.accelerometer.append(
+                        Workout_data_accelerometer(
+                            timestamp: Date(),
+                            accelerometerX: data.acceleration.x,
+                            accelerometerY: data.acceleration.y,
+                            accelerometerZ: data.acceleration.z
+                        )
+                    )
+                } else {
+                    self.workoutModel?.data?.accelerometer.append(
+                        Workout_data_accelerometer(
+                            timestamp: Date(),
+                            accelerometerX: 0,
+                            accelerometerY: 0,
+                            accelerometerZ: 0
+                        )
+                    )
+                }
             }
         }
     }
@@ -38,9 +60,7 @@ class WorkoutManager: NSObject, ObservableObject {
     let healthStore = HKHealthStore()
     var session: HKWorkoutSession?
     var builder: HKLiveWorkoutBuilder?
-    
-    var motionTimer: Timer?
-    
+
     func startWorkout() async{
         do {
             user = try await login()
@@ -50,6 +70,7 @@ class WorkoutManager: NSObject, ObservableObject {
         workoutModel = createWorkoutAndUser(user!)
         startHeartDataCollection()
         startIMUDataCollection()
+        startLocationDataCollection()
     }
     
     func createWorkoutAndUser(_ user: RealmSwift.User) -> Workout{
@@ -60,7 +81,8 @@ class WorkoutManager: NSObject, ObservableObject {
             metadata: Workout_metadata(activity: selectedWorkout!),
             startDateTime: workoutStartTime,
             endDateTime: nil,
-            data: List<Workout_data>()
+            data: Workout_data(),
+            location: List<Workout_location>()
         )
         
         return workout
@@ -94,7 +116,22 @@ class WorkoutManager: NSObject, ObservableObject {
     func startIMUDataCollection(updateInterval: Double = 0.5) {
         self.motionManager.accelerometerUpdateInterval = updateInterval
         self.motionManager.startAccelerometerUpdates()
-        
+    }
+    
+    func startLocationDataCollection(){
+        locationManager.delegate = self
+        if (workoutModel?.metadata?.indoor)!{
+            workoutModel?.location.append(
+                Workout_location(
+                    timestamp: Date(),
+                    latitude: (locationManager.location?.coordinate.latitude)!,
+                    longitude: (locationManager.location?.coordinate.longitude)!
+                )
+            )
+        } else {
+            locationManager.distanceFilter = 100
+            locationManager.startUpdatingLocation()
+        }
     }
     
     func requestAuthorization(){
@@ -117,6 +154,8 @@ class WorkoutManager: NSObject, ObservableObject {
             // Handle error
             
         }
+        
+        locationManager.requestWhenInUseAuthorization()
     }
     
     // Mark: - State Control
@@ -145,6 +184,8 @@ class WorkoutManager: NSObject, ObservableObject {
         motionManager.stopAccelerometerUpdates()
         showingSummaryView = true
         workoutModel?.endDateTime = Date()
+        motionTimer?.invalidate()
+        locationManager.stopUpdatingLocation()
         await openSyncedRealm(user: user!, workout: workoutModel!)
     }
     
@@ -154,9 +195,6 @@ class WorkoutManager: NSObject, ObservableObject {
     @Published var activeEnergy: Double = 0
     @Published var distance: Double = 0
     @Published var workout: HKWorkout?
-    var x: Double?
-    var y: Double?
-    var z: Double?
     
     func updateForStatistics(_ statistics: HKStatistics?) {
         guard let statistics = statistics else { return }
@@ -177,20 +215,8 @@ class WorkoutManager: NSObject, ObservableObject {
                 return
             }
             
-            if let data = self.motionManager.accelerometerData {
-                self.x = data.acceleration.x
-                self.y = data.acceleration.y
-                self.z = data.acceleration.z
-            }
-            
-            self.workoutModel?.data.append(
-                Workout_data(
-                    timestamp: Date(),
-                    heartRate: self.heartRate,
-                    accelerometerX: self.x ?? 0,
-                    accelerometerY: self.y ?? 0,
-                    accelerometerZ: self.z ?? 0
-                )
+            self.workoutModel?.data?.heart.append(
+                Workout_data_heart(timestamp: Date(), heartRate: self.heartRate)
             )
         }
     }
@@ -204,9 +230,6 @@ class WorkoutManager: NSObject, ObservableObject {
         averageHeartRate = 0
         heartRate = 0
         distance = 0
-        x = nil
-        y = nil
-        z = nil
     }
 }
 
@@ -249,4 +272,20 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate{
     }
     
     
+}
+
+extension WorkoutManager: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        workoutModel?.location.append(
+            Workout_location(
+                timestamp: Date(),
+                latitude: (locations.first?.coordinate.latitude)!,
+                longitude: (locations.first?.coordinate.longitude)!
+            )
+        )
+        
+    }
 }
